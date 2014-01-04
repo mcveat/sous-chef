@@ -2,33 +2,53 @@
 <head>
   <title>Sous Chef</title>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/flatty.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
   <script type="text/javascript" src="js/main.js"></script> 
 </head>
 <body>
-  <div>
-    <p>Sous-chef breaks down recipes into individual cooking steps so you can easily follow along while cooking.  Customized timers that match recipe instructions are featured at each step.  Following a recipe has never been this simple.</p>
-    <p>To begin, copy and paste a recipe:</p>
-  </div>
-  <div ng-controller="RecipeCtrl">
-    <div ng-show="showInput()">
-      <textarea ng-model="recipeText"></textarea>
-      <button ng-click="go()">Go!</button>
-    </div>
-    <div ng-show="showRecipe()">
-      <div ng-repeat="step in steps">
-        <div>
-          <p>{{$index + 1}}</p>
-          <p>{{step}}</p>
-        </div>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><b>SOUS-CHEF</b></a>
       </div>
-      <button ng-click="back()">Back</button>
     </div>
   </div>
-
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Follow recipes hands free!</h1>
+          <p>Start by copying and pasting a recipe below:</p>
+          <div ng-controller="RecipeCtrl" class="form-inline">
+            <div ng-show="showInput()" >
+              <textarea class="form-control form-group" ng-model="recipeText"></textarea>
+              <button class="btn btn-warning btn-lg" ng-click="go()">Go!</button>
+            </div>
+            <div ng-show="showRecipe()">
+              <div ng-repeat="step in steps">
+                <div>
+                  <p>{{$index + 1}}</p>
+                  <p>{{step}}</p>
+                </div>
+              </div>
+              <button ng-click="back()">Back</button>
+            </div>
+          </div>
+        </div><!-- /col-lg-8 -->
+        <div class="col-lg-4">
+          <img class="img-responsive" src="img/ipad-hand.png" alt="">
+        </div><!-- /col-lg-4 -->
+      </div>
+    </div>
+  </div>
   <div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>

@@ -31,6 +31,7 @@ module.exports = (grunt) ->
           { expand: true, cwd: 'app/html/', src: ['*.html'], dest: 'target' },
           { expand: true, cwd: 'app/js/', src: ['**'], dest: 'target/js' }
           { expand: true, cwd: 'app/css/', src: ['**'], dest: 'target/css' }
+          { expand: true, cwd: 'app/img/', src: ['**'], dest: 'target/img' }
         ]
     coffee:
       compile:
