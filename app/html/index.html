@@ -41,11 +41,11 @@
                 <div ng-show="showStep($index)">
                   <h1>Step {{$index + 1}}</h1>
                   <h2 class="instruction-txt">{{step.text}}</h2>
-                  <div ng-repeat="timer in step.timers">
+                  <div ng-controller="TimerCtrl" ng-repeat="timer in step.timers">
                     {{timer.verb}} for {{timer.time}} {{timer.unit}}
-                    <button class="btn btn-warning btn-lg btn-timer">Start Timer</button>
-                    <span>{{timer.time}}</span> 
-                    <a>reset</a>
+                    <button class="btn btn-warning btn-lg btn-timer" ng-click="toggle()">{{buttonCaption()}}</button>
+                    <span>{{timeLeft()}}</span> 
+                    <a ng-click="reset()">reset</a>
                   </div>
                 </div>
               </div>
