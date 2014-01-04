@@ -34,14 +34,14 @@
             </div>
             <div ng-show="showRecipe()">
               <div>
-                <button ng-click="back()">Back</button>
-                <button ng-click="previousStep()">Previous step</button>
-                <button ng-click="nextStep()">Next step</button>
+                <button class="btn btn-warning btn-lg" ng-click="back()">Back</button>
+                <button class="btn btn-warning btn-lg" ng-click="previousStep()">Previous step</button>
+                <button class="btn btn-warning btn-lg" ng-click="nextStep()">Next step</button>
               </div>
               <div ng-repeat="step in steps">
                 <div ng-show="showStep($index)">
-                  <p>{{$index + 1}}</p>
-                  <p>{{step}}</p>
+                  <h1>{{$index + 1}}</h1>
+                  <h1>{{step}}</h1>
                 </div>
               </div>
             </div>
@@ -53,6 +53,37 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row mt centered">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Follow Recipes<br/>Clearly Now.</h1>
+        <h3>Don't miss any steps.</h3>
+      </div>
+    </div><!-- /row -->
+    
+    <div class="row mt centered">
+      <div class="col-lg-4">
+        <img src="assets/img/ser01.png" width="180" alt="">
+        <h4>1 - Recipes Step by Step</h4>
+        <p>Focus on each individual step.</p>
+      </div><!--/col-lg-4 -->
+
+      <div class="col-lg-4">
+        <img src="assets/img/ser02.png" width="180" alt="">
+        <h4>2 - Cooking Timers </h4>
+        <p>Built in cooking timers are accessible at each step.</p>
+
+      </div><!--/col-lg-4 -->
+
+      <div class="col-lg-4">
+        <img src="assets/img/ser03.png" width="180" alt="">
+        <h4>3 - Never Missing A Step</h4>
+        <p>Easily navigate recipe instructions.</p>
+
+      </div><!--/col-lg-4 -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+  
   <div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
