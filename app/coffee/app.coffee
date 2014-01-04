@@ -52,18 +52,21 @@ TimerCtrl = ($scope, $timeout) ->
   $scope.seconds = $scope.timer.time * unitToSeconds($scope.timer.unit)
   $scope.secondsPassed = 0
   $scope.running = false
+  $scope.alarm = soundManager.createSound url: '/snd/alarm.mp3'
 
   $scope.onTimeout = ->
     $scope.secondsPassed = $scope.secondsPassed + 1
     if $scope.secondsLeft() > 0 then $scope.timeout = $timeout($scope.onTimeout,1000)
+    else $scope.alarm.play()
 
   $scope.toggle = ->
     if $scope.running
       $scope.running = false
       $timeout.cancel $scope.timeout
+      $scope.alarm.stop()
+      if $scope.secondsLeft() <= 1 then $scope.secondsPassed = 0
     else
       $scope.running = true
-      if $scope.secondsLeft() <= 1 then $scope.secondsPassed = 0
       $scope.timeout = $timeout($scope.onTimeout,1000)
 
   $scope.reset = -> $scope.secondsPassed = 0
@@ -72,8 +75,17 @@ TimerCtrl = ($scope, $timeout) ->
 
   $scope.timeLeft = -> secondsToTime($scope.secondsLeft())
 
-  $scope.buttonCaption = -> if $scope.running then 'Pause timer' else 'Start timer'
+  $scope.buttonCaption = -> 
+    if $scope.running 
+      if $scope.secondsLeft() > 0 then 'Pause timer' else 'Stop timer'
+    else 
+      if $scope.secondsPassed > 0 then 'Resume timer' else 'Start timer'
 
 root = exports ? this
 root.RecipeCtrl = RecipeCtrl
 root.TimerCtrl = TimerCtrl
+
+$ ->
+  soundManager.setup
+    url: '/swf/'
+    onready: ->
