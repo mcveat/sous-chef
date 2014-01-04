@@ -38,10 +38,10 @@
               </div>
               <div>
                 <button class="btn btn-warning btn-lg" ng-click="back()">Back</button>
-                <button class="btn btn-warning btn-lg" ng-click="previousStep()">Previous step</button>
-                <button class="btn btn-warning btn-lg" ng-click="nextStep()">Next step</button>
+                <button class="btn btn-warning btn-lg" ng-class="{disabled: currentStep == 0}" ng-click="previousStep()">Previous step</button>
+                <button class="btn btn-warning btn-lg" ng-class="{disabled: currentStep == steps.length}" ng-click="nextStep()">Next step</button>
               </div>
-              <div ng-repeat="step in steps">
+              <div ng-repeat="step in steps" ng-hide="showFinished()">
                 <div ng-show="showStep($index)">
                   <h1>Step {{$index + 1}}</h1>
                   <h2 class="instruction-txt">{{step.text}}</h2>
@@ -58,6 +58,9 @@
                     </div>
                   </div>
                 </div>
+              </div>
+              <div ng-show="showFinished()">
+                <h1>That's all! Enjoy your meal!</h1>
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@ RecipeCtrl = ($scope) ->
   $scope.showInput = -> $scope.view == 'input'
   $scope.showRecipe = -> $scope.view == 'recipe'
   $scope.showStep = (n) -> $scope.currentStep == n
+  $scope.showFinished = -> $scope.currentStep == $scope.steps.length
 
   $scope.progress = -> Math.round($scope.currentStep / $scope.steps.length * 100)
 
