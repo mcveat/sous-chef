@@ -26,9 +26,9 @@
       <div class="row">
         <div class="col-lg-8">
           <h1>Follow recipes hands free!</h1>
-          <p>Start by copying and pasting a recipe below:</p>
           <div ng-controller="RecipeCtrl" class="form-inline">
             <div ng-show="showInput()" >
+              <p>Start by copying and pasting a recipe below:</p>
               <textarea class="form-control form-group" ng-model="recipeText"></textarea>
               <button class="btn btn-warning btn-lg" ng-click="go()">Go!</button>
             </div>
@@ -41,7 +41,7 @@
               <div ng-repeat="step in steps">
                 <div ng-show="showStep($index)">
                   <h1>{{$index + 1}}</h1>
-                  <h1>{{step}}</h1>
+                  <h2>{{step}}</h2>
                 </div>
               </div>
             </div>
