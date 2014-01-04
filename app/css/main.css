@@ -13,6 +13,7 @@
 	color:rgba(241,241,241,1);
 
 }
+
 .timer-des{
 	color: rgba(240,240,240,1);
 }
@@ -23,4 +24,22 @@
 .reset{
 	color: #777;
 	font-style:italic;
+}
+
+.steps-list {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 25px;
+}
+
+.steps-list-item {
+  margin-bottom:15px;
+}
+
+.steps-list-item.selected {
+  background-color: #f0ad4e;
+  color: black;
+  font-weight: bold;
 }

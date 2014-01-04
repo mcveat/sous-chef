@@ -1,17 +1,17 @@
 RecipeCtrl = ($scope) ->
   $scope.view = 'input'
-  $scope.step = 0
+  $scope.currentStep = 0
 
   $scope.go = -> 
     $scope.steps = extractSteps $scope.recipeText
     $scope.view = 'recipe'
   $scope.back = -> $scope.view = 'input'
-  $scope.nextStep = -> $scope.step = $scope.step + 1
-  $scope.previousStep = -> $scope.step = $scope.step - 1
+  $scope.nextStep = -> $scope.currentStep = $scope.currentStep + 1
+  $scope.previousStep = -> $scope.currentStep = $scope.currentStep - 1
 
   $scope.showInput = -> $scope.view == 'input'
   $scope.showRecipe = -> $scope.view == 'recipe'
-  $scope.showStep = (n) -> $scope.step == n
+  $scope.showStep = (n) -> $scope.currentStep == n
 
   extractSteps = (text) ->
     _.chain(text.split '\n')

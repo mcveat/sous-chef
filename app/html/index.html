@@ -21,10 +21,11 @@
   </div>
   <div id="headerwrap">
     <div class="container">
-      <div class="row">
+      <div class="row" ng-controller="RecipeCtrl" class="form-inline">
         <div class="col-lg-6">
-          <h1>Submit a Recipe and <br/>Start Cooking:</h1>
-          <div ng-controller="RecipeCtrl" class="form-inline">
+          <h1 ng-show="showInput()">Submit a Recipe to <br/>Start Cooking:</h1>
+          <h1 ng-show="showRecipe()">Recipe steps:</h1>
+          <div>
             <div ng-show="showInput()" >
               <textarea placeholder="Copy and Paste a recipe here..." class="form-control form-group" ng-model="recipeText"></textarea>
               <button class="btn btn-warning btn-lg" ng-click="go()">Go!</button>
@@ -58,6 +59,11 @@
         </div><!-- /col-lg-8 -->
         <div class="col-lg-6">
           <img class="img-responsive" src="img/cook.svg" width="650px" alt="">
+          <div class="steps-list" ng-show="showRecipe()">
+            <ul ng-repeat="step in steps">
+              <li class="steps-list-item" ng-class="{selected: currentStep == $index}"> {{step.text}}</li>
+            </ul>
+          </div>
         </div><!-- /col-lg-4 -->
       </div>
     </div>
