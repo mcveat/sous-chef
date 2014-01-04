@@ -4,3 +4,12 @@
 #headerwrap{
 	padding-top:120px;
 }
+.btn-timer{
+	background: red;
+	border: red;
+}
+.instruction-txt{
+	
+	color:rgba(241,241,241,1);
+
+}

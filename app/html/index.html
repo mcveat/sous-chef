@@ -40,10 +40,10 @@
               <div ng-repeat="step in steps">
                 <div ng-show="showStep($index)">
                   <h1>Step {{$index + 1}}</h1>
-                  <h2 style="color:rgba(241,241,241,1);">{{step.text}}</h2>
+                  <h2 class="instruction-txt">{{step.text}}</h2>
                   <div ng-repeat="timer in step.timers">
                     {{timer.verb}} for {{timer.time}} {{timer.unit}}
-                    <button>Start</button>
+                    <button class="btn btn-warning btn-lg btn-timer">Start Timer</button>
                     <span>{{timer.time}}</span> 
                     <a>reset</a>
                   </div>
