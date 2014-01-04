@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/flatty.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
   <script type="text/javascript" src="js/main.js"></script> 
 </head>
 <body>
@@ -18,7 +19,12 @@
       <button ng-click="go()">Go!</button>
     </div>
     <div ng-show="showRecipe()">
-      <p>{{recipeText}}</p>
+      <div ng-repeat="step in steps">
+        <div>
+          <p>{{$index + 1}}</p>
+          <p>{{step}}</p>
+        </div>
+      </div>
       <button ng-click="back()">Back</button>
     </div>
   </div>
@@ -26,7 +32,6 @@
   <div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
   </div>
 </body>
 </html>
