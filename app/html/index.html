@@ -26,7 +26,7 @@
           <h1>Submit a Recipe and <br/>Start Cooking:</h1>
           <div ng-controller="RecipeCtrl" class="form-inline">
             <div ng-show="showInput()" >
-              <textarea class="form-control form-group" ng-model="recipeText"></textarea>
+              <textarea placeholder="Copy and Paste a recipe here..." class="form-control form-group" ng-model="recipeText"></textarea>
               <button class="btn btn-warning btn-lg" ng-click="go()">Go!</button>
             </div>
             <div ng-show="showRecipe()">
@@ -68,7 +68,7 @@
       <div class="col-lg-4">
         <img src="img/checklist.svg" width="180" alt="">
         <h4>1 - Step by Step</h4>
-        <p>Sous-Chef breaks recipes down into simple steps.  A clear and easy way to follow any recipe.</p>
+        <p>Recipes are broken down into simple steps.</p>
       </div><!--/col-lg-4 -->
 
       <div class="col-lg-4">
@@ -80,8 +80,8 @@
 
       <div class="col-lg-4">
         <img src="img/checkmark.svg" width="180" height="180px" alt="">
-        <h4>3 - Never Missing A Step</h4>
-        <p>Easily navigate recipe instructions without any confusion.</p>
+        <h4>3 - Simple and Easy</h4>
+        <p>Navigate recipe instructions without any confusion.</p>
 
       </div><!--/col-lg-4 -->
     </div><!-- /row -->
