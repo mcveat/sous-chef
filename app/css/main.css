@@ -15,5 +15,12 @@
 }
 .timer-des{
 	color: rgba(240,240,240,1);
+}
+.large-timer{
+	font-size:72px;
+
+}
+.reset{
+	color: #777;
 	font-style:italic;
 }
