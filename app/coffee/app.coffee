@@ -13,6 +13,8 @@ RecipeCtrl = ($scope) ->
   $scope.showRecipe = -> $scope.view == 'recipe'
   $scope.showStep = (n) -> $scope.currentStep == n
 
+  $scope.progress = -> Math.round($scope.currentStep / $scope.steps.length * 100)
+
   extractSteps = (text) ->
     _.chain(text.split '\n')
       .filter((s) -> !!s)
