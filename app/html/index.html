@@ -40,10 +40,16 @@
                   <h1>Step {{$index + 1}}</h1>
                   <h2 class="instruction-txt">{{step.text}}</h2>
                   <div ng-controller="TimerCtrl" ng-repeat="timer in step.timers">
-                    {{timer.verb}} for {{timer.time}} {{timer.unit}}
-                    <button class="btn btn-warning btn-lg btn-timer" ng-click="toggle()">{{buttonCaption()}}</button>
-                    <span>{{timeLeft()}}</span> 
-                    <a ng-click="reset()">reset</a>
+                    <hr/>
+                    <div class="col-lg-4">
+                      <p class="timer-des">{{timer.verb}} for {{timer.time}} {{timer.unit}}.</p>
+                      <button class="btn btn-warning btn-lg btn-timer" ng-click="toggle()">{{buttonCaption()}}</button>
+                      <a ng-click="reset()">reset</a>
+                    </div>
+                    <div class="col-lg-8">
+                      <span>{{timeLeft()}}</span> 
+                      
+                    </div>
                   </div>
                 </div>
               </div>
