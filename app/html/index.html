@@ -33,13 +33,17 @@
               <button class="btn btn-warning btn-lg" ng-click="go()">Go!</button>
             </div>
             <div ng-show="showRecipe()">
+              <div>
+                <button ng-click="back()">Back</button>
+                <button ng-click="previousStep()">Previous step</button>
+                <button ng-click="nextStep()">Next step</button>
+              </div>
               <div ng-repeat="step in steps">
-                <div>
+                <div ng-show="showStep($index)">
                   <p>{{$index + 1}}</p>
                   <p>{{step}}</p>
                 </div>
               </div>
-              <button ng-click="back()">Back</button>
             </div>
           </div>
         </div><!-- /col-lg-8 -->
