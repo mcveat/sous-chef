@@ -17,9 +17,10 @@
 .timer-des{
 	color: rgba(240,240,240,1);
 }
-.large-timer{
-	font-size:72px;
-
+h1.large-timer{
+	font-size: 100px !important;
+	margin-top:0px !important;
+	background: rgba(2,3,4,0.4);
 }
 .reset{
 	color: #777;
