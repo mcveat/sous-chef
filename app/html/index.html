@@ -23,7 +23,7 @@
     <div class="container">
       <div class="row" ng-controller="RecipeCtrl" class="form-inline">
         <div class="col-lg-6">
-          <h1 ng-show="showInput()">Submit a Recipe to <br/>Start Cooking:</h1>
+          <h1 ng-show="showInput()">Submit a Recipe to Start Cooking:</h1>
           <h3 class="section-title" ng-show="showRecipe()">Recipe instructions:</h3>
           <div>
             <div ng-show="showInput()" >
@@ -31,15 +31,16 @@
               <button class="btn btn-warning btn-lg" ng-click="go()">Go!</button>
             </div>
             <div ng-show="showRecipe()">
-              <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress()}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width: progress() + '%'}">
-                  <span class="sr-only">60% Complete</span>
-                </div>
-              </div>
               <div>
                 <button class="btn btn-warning btn-lg" ng-click="back()">Back</button>
                 <button class="btn btn-warning btn-lg" ng-class="{disabled: currentStep == 0}" ng-click="previousStep()">Previous step</button>
                 <button class="btn btn-warning btn-lg" ng-class="{disabled: currentStep == steps.length}" ng-click="nextStep()">Next step</button>
+              </div>
+              <p class="action-des">Progress..</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress()}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width: progress() + '%'}">
+                <span class="sr-only">60% Complete</span>
+                </div>
               </div>
               <div ng-repeat="step in steps" ng-hide="showFinished()">
                 <div ng-show="showStep($index)">
@@ -47,16 +48,16 @@
                   <h2 class="instruction-txt">{{step.text}}</h2>
                   <div ng-controller="TimerCtrl" ng-repeat="timer in step.timers">
                     <hr/>
-                    <div class="col-lg-4">
-                      <p class="timer-des">{{timer.verb}} for {{timer.time}} {{timer.unit}}.</p>
-                      <button class="btn btn-warning btn-lg btn-timer" ng-click="toggle()">{{buttonCaption()}}</button>
-                      <p><a href="#" class="reset" ng-click="reset()">reset</a></p>
+                    <div class="col-lg-6" style="padding:0px !important;">
+                    <p class="action-des">{{timer.verb}} for {{timer.time}} {{timer.unit}}</p>
+                    <button class="btn btn-warning btn-lg btn-timer" ng-click="toggle()">{{buttonCaption()}}</button>
                     </div>
-                    <div class="col-lg-8">
-                      <h1 class="large-timer">{{timeLeft()}}</h1> 
-                      
+                    <div class="col-lg-6" style="padding:0px !important;">
+                      <span class="large-timer">{{timeLeft()}}</span>
                     </div>
+                    <a href="#" class="reset" ng-click="reset()">reset</a>
                   </div>
+                  <hr/>
                 </div>
               </div>
               <div ng-show="showFinished()">
