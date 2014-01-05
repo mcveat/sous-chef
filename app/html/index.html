@@ -24,7 +24,7 @@
       <div class="row" ng-controller="RecipeCtrl" class="form-inline">
         <div class="col-lg-6">
           <h1 ng-show="showInput()">Submit a Recipe to <br/>Start Cooking:</h1>
-          <h1 ng-show="showRecipe()">Recipe instructions:</h1>
+          <h3 class="section-title" ng-show="showRecipe()">Recipe instructions:</h3>
           <div>
             <div ng-show="showInput()" >
               <textarea placeholder="Copy and Paste a recipe here..." class="form-control form-group" ng-model="recipeText"></textarea>
