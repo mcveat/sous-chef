@@ -43,7 +43,7 @@
 .steps-list-item {
   margin-bottom:15px;
   border-radius: 3px;
-  padding: 3px;
+  padding: 10px;
 }
 
 .steps-list-item.selected {
@@ -62,4 +62,13 @@
 
 .progress{
 	background-color:#C2C8C9;
+}
+
+.right{
+	background: url('/img/cook.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+	min-height: 600px;
+	background-size: 650px;
+	padding-top: 20px;
 }
