@@ -57,7 +57,6 @@
                     </div>
                     <a href="#" class="reset" ng-click="reset()">reset</a>
                   </div>
-                  <hr/>
                 </div>
               </div>
               <div ng-show="showFinished()">
@@ -67,11 +66,13 @@
           </div>
         </div><!-- /col-lg-8 -->
         <div class="col-lg-6">
-          <img class="img-responsive" src="img/cook.svg" width="650px" alt="">
-          <div class="steps-list" ng-show="showRecipe()">
-            <ul ng-repeat="step in steps">
-              <li class="steps-list-item" ng-class="{selected: currentStep == $index}"> {{step.text}}</li>
-            </ul>
+          <div class="col-lg-12" style="padding:0px;"> 
+            <img class="img-responsive" src="img/cook.svg" width="650px" alt="">
+            <div class="steps-list" ng-show="showRecipe()">
+            <div ng-repeat="step in steps">
+              <p class="steps-list-item" ng-class="{selected: currentStep == $index}"> {{$index + 1}}.  {{step.text}}</p>
+            </div>
+          </div>
           </div>
         </div><!-- /col-lg-4 -->
       </div>

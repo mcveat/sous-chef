@@ -3,6 +3,7 @@
 }
 #headerwrap{
 	padding-top:120px;
+	padding-bottom: 20px;
 }
 .btn-timer{
 	background: red;
@@ -16,7 +17,7 @@
 }
 
 .action-des{
-	color: rgba(240,240,240,1);
+	color: #C2C8C9;
 	margin: 13px 0px;
 }
 .large-timer{
@@ -27,16 +28,22 @@
 .reset{
 	color: #CECBC8;
 	font-style:italic;
+
 }
 .steps-list {
   position: absolute;
   top: 10%;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 25px;
+  background-color: rgba(194,200,201, 0.8);
+  padding: 20px;
+  width:100%;
+  margin:0px;
+  border-radius: 5px;
 }
 
 .steps-list-item {
   margin-bottom:15px;
+  border-radius: 3px;
+  padding: 3px;
 }
 
 .steps-list-item.selected {
@@ -51,4 +58,8 @@
 
 .btn-lg{
 	margin-bottom:15px;
+}
+
+.progress{
+	background-color:#C2C8C9;
 }
